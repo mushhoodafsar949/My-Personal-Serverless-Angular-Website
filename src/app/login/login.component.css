@@ -1,0 +1,31 @@
+#LoginMainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+background-color: white;}
+
+  #LoginMainDiv-content {
+    width: 100%;
+    max-width: 70em;
+    padding: 1.5em;
+  background-color: black;}
+
+    button {
+      margin: .5em;
+    margin-left: 30px;
+    border-color: black;
+  }
+      input {
+      width: 100%;
+      padding: 1em;
+      margin: .5em 0;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid rgba(15, 15, 15, .3);
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;}

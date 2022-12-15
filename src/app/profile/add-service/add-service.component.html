@@ -1,0 +1,86 @@
+<div class="card mb-1" style="max-width: 100vw;" id="card1" *ngIf="!submitted">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div class="card-body" id="virtualcard">
+        <h3> <b>
+     <input type="text" class="form-control" placeholder=" Enter Service Title"
+      [(ngModel)]="sv.ServiceName" name="ServiceTitle"> </b>
+    </h3>
+
+        <p class="card-text">
+              <textarea matInput rows="8" placeholder="Enter Service's Description Here"
+              [(ngModel)]="sv.Description" name="ServiceDescription"
+              style="width: 100%;"></textarea>
+        </p>
+
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Image Front</label>
+          <input class="form-control" type="file" id="formFile"
+          name="file" (input)="onFileChanged1($event)"
+          accept=".jpeg,.jpg,.png,.svg">
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Image Left</label>
+          <input class="form-control" type="file" id="formFile"
+          name="file" (input)="onFileChanged2($event)"
+          accept=".jpeg,.jpg,.png,.svg">
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Image Right</label>
+          <input class="form-control" type="file" id="formFile"
+          name="file" (input)="onFileChanged3($event)"
+          accept=".jpeg,.jpg,.png,.svg">
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Image Back</label>
+          <input class="form-control" type="file" id="formFile"
+          name="file" (input)="onFileChanged4($event)"
+          accept=".jpeg,.jpg,.png,.svg">
+        </div>
+
+        <p class="card-text"><small class="text-muted">
+          <input type="text" class="form-control" placeholder=" Enter Service Price"
+          [(ngModel)]="sv.Price" name="Price">
+        </small></p>
+
+        <p class="card-text"><small class="text-muted">
+          <input type="text" class="form-control" placeholder=" Enter Service Category"
+          [(ngModel)]="sv.Category" name="Category">
+        </small></p>
+      </div>
+    </div>
+
+    <div class="col-md-4 p-5" id="Box-animation-division">
+      <div class="wrapper">
+        <div class="container">
+          <div class="image-cube">
+            <div class="front">
+              <img [src]="sv.ImageUrl1"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="right">
+              <img [src]="sv.ImageUrl2"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="back">
+              <img [src]="sv.ImageUrl3"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="left">
+              <img [src]="sv.ImageUrl4"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button style="width: 150px; margin-top: 10px; margin-bottom: 10px; margin-left: 20px;" (click)="saveData()" class="btn btn-success">Submit</button>
+</div>
+
+<div *ngIf="submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newData()">Add</button>
+</div>

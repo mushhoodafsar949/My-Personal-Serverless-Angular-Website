@@ -1,0 +1,37 @@
+mat-card{
+width: 80vw;
+margin: auto;
+position: relative;
+}
+mat-form-field{
+  width: 75vw;
+}
+textarea{
+  font-size: large;
+}
+
+input{
+  border: 1px solid black;
+  width: 30vw;
+  height: 6vh;
+  background-color:oldlace;
+  font-size: larger;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.images{
+  margin-left: 9.2vw;
+}
+img{
+  height: 60vh;
+  width: 60vw;
+  padding: 10px;
+}
+
+
+#submitbtn{
+  margin-left: 10vw;
+}

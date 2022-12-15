@@ -1,0 +1,56 @@
+<section class="my-projects" *ngIf="!submitted">
+  <div class="row">
+    <div class="col-md-2">
+
+    </div>
+
+    <div class="col-md-8">
+      <div class="card mb-3" *ngFor="let s of project; let i = index"
+      id="card1" >
+      <div class="row" >
+        <div class="col-md-7">
+          <div class="card-body" id="virtualcard">
+            <h2> <b> {{s.Title}} </b> </h2>
+            <p class="card-text">{{s.paragraph1}}</p>
+            <p> {{s.paragraph2}} </p>
+            <p >{{s.BulletPoints}}</p>
+            <p class="card-text"><small class="text-muted">{{s.DevelopersName}}</small></p>
+          </div>
+        </div>
+
+        <div class="col-md-5 p-5" id="Box-animation-division">
+          <div class="wrapper">
+            <div class="container">
+              <div class="image-cube">
+                <div class="front">
+                  <img [src]="s.ImageUrl1"
+                  onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+                </div>
+                <div class="right">
+                  <img [src]="s.ImageUrl2"
+                  onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+                </div>
+                <div class="back">
+                  <img [src]="s.ImageUrl3"
+                  onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+                </div>
+                <div class="left">
+                  <img [src]="s.ImageUrl4"
+                  onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+    <div class="col-md-2">
+
+    </div>
+  </div>
+
+
+</section>

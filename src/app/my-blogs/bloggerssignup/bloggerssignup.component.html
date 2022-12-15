@@ -1,0 +1,48 @@
+<div class="card" style="
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+  <div class="topdiv" style="text-align: center;">
+    <H1 class="fw-bold mb-0" style="font-size: 1.45; color:blue;
+    padding: 10px;">Welcome to Blog Point</H1>
+  </div>
+
+<div class="centeraldiv" style="text-align: center; width: 100%; height: 100%;">
+  <div style=" margin-top: 50px;">
+    <div>
+      <input type="email" #userName required
+      placeholder="Enter Your @Username"
+      style="height: 50px; border-radius: 100px; border: none; margin-top: 20px;
+      background-color: white; font-size: 1.25;">
+    </div>
+    <div>
+      <input type="text" #userpasword required
+      placeholder="Enter Your Password"
+      style="height: 50px; border-radius: 100px; border: none;
+      background-color: white; margin-top: 20px; font-size: 1.25;">
+    </div>
+  </div>
+
+
+
+<div style="display:flex; align-items:center;  justify-content:center; margin-top: 50px;">
+  <button mat-raised-button type="button" class="btn btn-primary"
+  style="  margin-right: 10px;"
+   (click)="SignIn(userName.value, userpasword.value)">Signin</button>
+
+  <button mat-raised-button type="button" class="btn btn-primary"
+  style=" margin-left: 10px;"
+  (click)="SignUp(userName.value, userpasword.value)">Signup</button>
+</div>
+
+<div style="margin-top: 20px; margin-bottom: 20px;">
+  <button  mat-raised-button type="button" class="btn googleBtn"
+  style="margin-left: 10px;"
+   (click)="GoogleAuth()">
+    <i class="fab fa-google-plus-g"></i>
+    Log in with Google
+  </button>
+</div>
+
+  </div>
+
+</div>
+

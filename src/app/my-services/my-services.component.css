@@ -1,0 +1,159 @@
+.container0{
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  top:70px;
+  overflow: visible;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.container{
+  padding: 10px;
+}
+
+
+.container img{
+  height: 300px;
+}
+
+.container p{
+height: 100px;
+padding-top: 0%;
+margin-top: 0%;
+   overflow: hidden;
+   text-align: justify;
+}
+
+
+::-webkit-scrollbar{
+  width: 6px;
+}
+::-webkit-scrollbar-track{
+  border: 4px solid #232943;
+  box-shadow: inset 0 0 2.5px 2px rgb(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(
+      45deg,
+      #06dee1,
+      #70a9b8
+  );
+  border-radius: 1px;
+}
+
+
+
+.container2 {
+  padding: 5px;
+}
+.container2 img{
+  height: 400px;
+}
+
+
+
+.images{
+  height: 70vh;
+  width: 70vw;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#myimage{
+  height:70vh;
+  width: 60vw;
+  padding: 30px;
+}
+
+#image2{
+  height:500px;
+  width: 100vw;
+}
+
+#overlaycontainer {
+  padding: 30px;
+  width: 60%;
+  font-size: larger;
+  color: black;
+}
+
+#overlaycontainer h3{
+  font-weight: bold;
+}
+
+
+p{
+  text-align: justify;
+  line-height: 25px;
+}
+
+
+#footer{
+  background-color:white;
+  margin-bottom: 0%;
+  width: 100vw;
+  height:100px ;
+  margin-right: 15px;
+  padding: 10px;
+}
+
+td{
+  font-size: 30px;
+  color: black;
+  padding-top: 1.64vh;
+}
+
+.button {
+  border: none;
+  transition-duration: 0.9s;
+  height: 35px;
+  width: 100px;
+  font-size: medium;
+  border-radius: 15px;
+}
+
+.button:hover {
+
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#whatsapp{
+  border: none;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 100%;
+  transition-duration: 0.9s;
+  float:left;
+  height: 40px;
+  width: 40px;
+
+}
+
+#whatsapp:hover {
+
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#Shareit{
+  border: none;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 90%;
+  transition-duration: 0.9s;
+  float:left;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+
+}
+
+#Shareit:hover {
+
+  background-color: #4CAF50; /* Green */
+  color: white;
+}

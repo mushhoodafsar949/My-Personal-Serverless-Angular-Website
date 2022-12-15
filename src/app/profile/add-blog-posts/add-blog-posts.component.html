@@ -1,0 +1,575 @@
+<div class="card mb-1" style="max-width: 100vw;" id="card1" *ngIf="!submitted">
+  <div class="row g-0">
+
+    <div class="col-md-7">
+        <div class="card-body" id="virtualcard">
+
+        <div class="bloginformation" style="padding-top: 30px;"  *ngIf="author.uploaded == null">
+            <H1> Author Information *Mandatory For First Time Only*</H1>
+            <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Author Name"
+              [(ngModel)]="author.AuthorName" name="AuthorName"> </b>
+            </h3>
+            <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Author Profession"
+                [(ngModel)]="author.AuthorTitle" name="AuthorTitle"> </b>
+              </h3>
+              <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Author Expertise (i.e ML | DL | Web)"
+                [(ngModel)]="author.AuthorExpertise" name="AuthorExpertise"> </b>
+              </h3>
+              <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Author Location"
+                [(ngModel)]="author.AuthorLocation" name="AuthorLocation"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Author Twitter Link"
+                  [(ngModel)]="author.AuthorTwitterLink" name="AuthorTwitterLink"> </b>
+               </h3>
+               <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Author Facebook Link"
+                  [(ngModel)]="author.AuthorFacebookLink" name="AuthorFacebookLink"> </b>
+                </h3>
+                <h3> <b>
+                  <input type="text" class="form-control" placeholder=" Enter Author Whatsapp Link"
+                    [(ngModel)]="author.AuthorWhatsappLink" name="AuthorWhatsappLink"> </b>
+                  </h3>
+                <h3> <b>
+                  <input type="text" class="form-control" placeholder=" Enter Author Linkedin Link"
+                    [(ngModel)]="author.AuthorLinkedinLink" name="AuthorLinkedinLink"> </b>
+                </h3>
+                <h3> <b>
+                  <input type="text" class="form-control" placeholder=" Enter Author Stackoverflow Link"
+                    [(ngModel)]="author.AuthorStackoverflowLink" name="AuthorStackoverflowLink"> </b>
+                </h3>
+                <h3> <b>
+                  <input type="text" class="form-control" placeholder=" Enter Author Github Link"
+                    [(ngModel)]="author.AuthorGithubLink" name="AuthorGithubLink"> </b>
+                </h3>
+                <h3> <b>
+                  <input type="text" class="form-control" placeholder=" Enter Author Youtube Link"
+                    [(ngModel)]="author.AuthorYoutubeLink" name="AuthorYoutubeLink"> </b>
+                </h3>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Author Profile Picture</label>
+                  <input class="form-control" type="file" id="formFile"
+                  name="file" (input)="onFileChanged8($event)"
+                  accept=".jpeg,.jpg,.png,.svg">
+                </div>
+                <button mat-raised-button  type="button" (click)="saveit()"
+                class="btn btn-success"> Click Here</button>
+         </div>
+
+         <div *ngIf="author.uploaded=='true'">
+          <div class="bloginformation" style="padding-top: 30px;" >
+            <H1> Blog Header</H1>
+            <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Blog Title"
+              [(ngModel)]="blog.BlogTitle" name="BlogTitle"> </b>
+            </h3>
+              <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Blog Category"
+                [(ngModel)]="blog.BlogCategory" name="BlogCategory"> </b>
+              </h3>
+              <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Blog Card Paragraph"
+                [(ngModel)]="blog.BlogCardParagraph" name="BlogCardParagraph"> </b>
+              </h3>
+              <h3>
+                <b>
+              <input type="text" class="form-control" placeholder=" Enter Total Reading time i.e 5 min read"
+                [(ngModel)]="blog.BlogReadingtime" name="BlogReadingtime"> </b>
+              </h3>
+                <p class="card-text"><small class="text-muted">
+            <input type="text" class="form-control" placeholder=" Enter Blog Keywords"
+            [(ngModel)]="blog.BlogKeywords" name="BlogKeywords">
+          </small></p>
+
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Image Header</label>
+            <input class="form-control" type="file" id="formFile"
+            name="file" (input)="onFileChanged($event)"
+            accept=".jpeg,.jpg,.png,.svg">
+          </div>
+          </div>
+
+          <div class="firstcompletePassage" style="padding-top: 30px;">
+            <H1> First Passage</H1>
+            <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter First Paragraph Heading"
+              [(ngModel)]="blog.BlogHeading1" name="BlogHeading1"> </b>
+            </h3>
+
+            <p class="card-text">
+              <textarea matInput rows="6" placeholder="Enter Blog's Description Here"
+              [(ngModel)]="blog.BlogParagraph1" name="BlogParagraph1"
+              style="width: 100%;"></textarea>
+            </p>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Image Front</label>
+              <input class="form-control" type="file" id="formFile"
+              name="file" (input)="onFileChanged1($event)"
+              accept=".jpeg,.jpg,.png,.svg">
+            </div>
+
+            <div class="firstcompletePassageBulletPoints">
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 1 Here"
+                [(ngModel)]="blog.BlogBullet1" name="BlogBullet1"
+                style="width: 100%;"></textarea>
+            </p>
+            <p>
+              <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 2 Here"
+              [(ngModel)]="blog.BlogBullet2" name="BlogBullet2"
+              style="width: 100%;"></textarea>
+            </p>
+            <p>
+              <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 3 Here"
+              [(ngModel)]="blog.BlogBullet3" name="BlogBullet3"
+              style="width: 100%;"></textarea>
+            </p>
+            <p>
+              <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 4 Here"
+              [(ngModel)]="blog.BlogBullet4" name="BlogBullet4"
+              style="width: 100%;"></textarea>
+            </p>
+            <p>
+              <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 5 Here"
+              [(ngModel)]="blog.BlogBullet5" name="BlogBullet5"
+              style="width: 100%;"></textarea>
+            </p>
+            </div>
+
+            <div class="firstcompletePassageLinks">
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 1"
+                [(ngModel)]="blog.BlogLink1" name="BlogLink1"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 2"
+                [(ngModel)]="blog.BlogLink2" name="BlogLink2"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 3"
+                [(ngModel)]="blog.BlogLink3" name="BlogLink3"> </b>
+              </h3>
+            </div>
+
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="SecondcompletePassageEnable()">SecondcompletePassageEnable</button>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="SecondcompletePassageDisable()">SecondcompletePassageDisable</button>
+          </div>
+
+          <div class="SecondcompletePassage" style="padding-top: 30px;" *ngIf="SecondcompletePassage!=false">
+            <H1> Second Passage </H1>
+            <h3> <b>
+              <input type="text" class="form-control" placeholder=" Enter Second Paragraph Heading"
+              [(ngModel)]="blog.BlogHeading2" name="BlogHeading2"> </b>
+            </h3>
+
+            <p class="card-text">
+              <textarea matInput rows="6" placeholder="Enter Blog's Description Here"
+              [(ngModel)]="blog.BlogParagraph2" name="BlogParagraph2"
+              style="width: 100%;"></textarea>
+            </p>
+
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Image Left</label>
+              <input class="form-control" type="file" id="formFile"
+              name="file" (input)="onFileChanged2($event)"
+              accept=".jpeg,.jpg,.png,.svg">
+            </div>
+
+            <div class="SecondcompletePassageBulletPoints">
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 6 Here"
+                [(ngModel)]="blog.BlogBullet6" name="BlogBullet6"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 7 Here"
+                [(ngModel)]="blog.BlogBullet7" name="BlogBullet7"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 8 Here"
+                [(ngModel)]="blog.BlogBullet8" name="BlogBullet8"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 9 Here"
+                [(ngModel)]="blog.BlogBullet9" name="BlogBullet9"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 10 Here"
+                [(ngModel)]="blog.BlogBullet10" name="BlogBullet10"
+                style="width: 100%;"></textarea>
+              </p>
+            </div>
+
+            <div class="SecondcompletePassageLinks">
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 4"
+                [(ngModel)]="blog.BlogLink4" name="BlogLink4"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 5"
+                [(ngModel)]="blog.BlogLink5" name="BlogLink5"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 6"
+                [(ngModel)]="blog.BlogLink6" name="BlogLink6"> </b>
+              </h3>
+            </div>
+
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="ThirdcompletePassageEnable()">ThirdcompletePassageEnable</button>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="ThirdcompletePassageDisable()">ThirdcompletePassageDisable</button>
+
+          </div>
+
+          <div class="ThirdcompletePassage" style="padding-top: 30px;" *ngIf="ThirdcompletePassage!=false">
+            <H1> Third Passage</H1>
+            <h3>
+              <b>
+              <input type="text" class="form-control" placeholder=" Enter Third Paragraph Heading"
+              [(ngModel)]="blog.BlogHeading3" name="BlogHeading3"> </b>
+            </h3>
+
+            <p class="card-text">
+              <textarea matInput rows="6" placeholder="Enter Blog's Description Here"
+              [(ngModel)]="blog.BlogParagraph3" name="BlogParagraph3"
+              style="width: 100%;"></textarea>
+            </p>
+
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Image Right</label>
+              <input class="form-control" type="file" id="formFile"
+              name="file" (input)="onFileChanged3($event)"
+              accept=".jpeg,.jpg,.png,.svg">
+            </div>
+
+            <div class="ThirdcompletePassageBulletPoints">
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 11 Here"
+                [(ngModel)]="blog.BlogBullet11" name="BlogBullet11"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 12 Here"
+                [(ngModel)]="blog.BlogBullet12" name="BlogBullet12"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 13 Here"
+                [(ngModel)]="blog.BlogBullet13" name="BlogBullet13"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 14 Here"
+                [(ngModel)]="blog.BlogBullet14" name="BlogBullet14"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 15 Here"
+                [(ngModel)]="blog.BlogBullet15" name="BlogBullet15"
+                style="width: 100%;"></textarea>
+              </p>
+            </div>
+
+            <div class="ThirdcompletePassageLinks">
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 7"
+                [(ngModel)]="blog.BlogLink7" name="BlogLink7"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 8"
+                [(ngModel)]="blog.BlogLink8" name="BlogLink8"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 9"
+                [(ngModel)]="blog.BlogLink9" name="BlogLink9"> </b>
+              </h3>
+            </div>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="FourthcompletePassageEnable()">FourthcompletePassageEnable</button>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="FourthcompletePassageDisable()">FourthcompletePassageDisable</button>
+          </div>
+
+          <div class="FourthcompletePassage" style="padding-top: 30px;" *ngIf="FourthcompletePassage!=false">
+            <H1> Fourth Passage</H1>
+            <h3>
+              <b>
+              <input type="text" class="form-control" placeholder=" Enter Fourth Paragraph Heading"
+              [(ngModel)]="blog.BlogHeading4" name="BlogHeading4"> </b>
+            </h3>
+
+            <p class="card-text">
+              <textarea matInput rows="6" placeholder="Enter Blog's Description Here"
+              [(ngModel)]="blog.BlogParagraph4" name="BlogParagraph4"
+              style="width: 100%;"></textarea>
+            </p>
+
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Image Back</label>
+              <input class="form-control" type="file" id="formFile"
+              name="file" (input)="onFileChanged4($event)"
+              accept=".jpeg,.jpg,.png,.svg">
+            </div>
+
+            <div class="FourthcompletePassageBulletPoints">
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 16 Here"
+                [(ngModel)]="blog.BlogBullet16" name="BlogBullet16"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 17 Here"
+                [(ngModel)]="blog.BlogBullet17" name="BlogBullet17"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 18 Here"
+                [(ngModel)]="blog.BlogBullet18" name="BlogBullet18"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 19 Here"
+                [(ngModel)]="blog.BlogBullet19" name="BlogBullet19"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 20 Here"
+                [(ngModel)]="blog.BlogBullet20" name="BlogBullet20"
+                style="width: 100%;"></textarea>
+              </p>
+            </div>
+
+            <div class="FourthcompletePassageLinks">
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 10"
+                [(ngModel)]="blog.BlogLink10" name="BlogLink10"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 11"
+                [(ngModel)]="blog.BlogLink11" name="BlogLink11"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 12"
+                [(ngModel)]="blog.BlogLink12" name="BlogLink12"> </b>
+              </h3>
+            </div>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="FifthcompletePassageEnable()">FifthcompletePassageEnable</button>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="FifthcompletePassageDisable()">FifthcompletePassageDisable</button>
+          </div>
+
+          <div class="FifthcompletePassage" style="padding-top: 30px;" *ngIf="FifthcompletePassage!=false">
+            <H1> Fifth Passage</H1>
+            <h3>
+              <b>
+              <input type="text" class="form-control" placeholder=" Enter Fifth Paragraph Heading"
+              [(ngModel)]="blog.BlogHeading5" name="BlogHeading5"> </b>
+            </h3>
+
+            <p class="card-text">
+              <textarea matInput rows="6" placeholder="Enter Blog's Description Here"
+              [(ngModel)]="blog.BlogParagraph5" name="BlogParagraph5"
+              style="width: 100%;"></textarea>
+            </p>
+
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Image for 5th Passage</label>
+              <input class="form-control" type="file" id="formFile"
+              name="file" (input)="onFileChanged5($event)"
+              accept=".jpeg,.jpg,.png,.svg">
+            </div>
+
+            <div class="FifthcompletePassageBulletPoints">
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 21 Here"
+                [(ngModel)]="blog.BlogBullet21" name="BlogBullet21"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 22 Here"
+                [(ngModel)]="blog.BlogBullet22" name="BlogBullet22"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 23 Here"
+                [(ngModel)]="blog.BlogBullet23" name="BlogBullet23"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 24 Here"
+                [(ngModel)]="blog.BlogBullet24" name="BlogBullet24"
+                style="width: 100%;"></textarea>
+              </p>
+              <p>
+                <textarea matInput rows="2" placeholder="Enter Blog's BlogBullet 25 Here"
+                [(ngModel)]="blog.BlogBullet25" name="BlogBullet25"
+                style="width: 100%;"></textarea>
+              </p>
+            </div>
+
+            <div class="FifthcompletePassageLinks">
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 13"
+                [(ngModel)]="blog.BlogLink13" name="BlogLink13"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 14"
+                [(ngModel)]="blog.BlogLink14" name="BlogLink14"> </b>
+              </h3>
+              <h3> <b>
+                <input type="text" class="form-control" placeholder=" Enter Blog Link 15"
+                [(ngModel)]="blog.BlogLink15" name="BlogLink15"> </b>
+              </h3>
+            </div>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="ExtraThingsEnable()">ExtraImagesEnable</button>
+            <button mat-raised-button type="button"
+            style="width:250px; height:50px; margin:10px; background-color: #232943; color: white;"
+            (click)="ExtraThingsDisable()">ExtraImagesDisable</button>
+          </div>
+
+          <div class="conclusion">
+            <H1>Blog's Conclusion</H1>
+            <p>
+              <textarea matInput rows="6" placeholder="Enter Blog's Conclusion Here"
+              [(ngModel)]="blog.BlogConclusion" name="BlogConclusion"
+              style="width: 100%;"></textarea>
+            </p>
+          </div>
+
+        <div class="ExtraThings" *ngIf="ExtraThings!=false">
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Image for Extra Passage</label>
+            <input class="form-control" type="file" id="formFile"
+            name="file" (input)="onFileChanged6($event)"
+            accept=".jpeg,.jpg,.png,.svg">
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Image for Extra Passage</label>
+            <input class="form-control" type="file" id="formFile"
+            name="file" (input)="onFileChanged7($event)"
+            accept=".jpeg,.jpg,.png,.svg">
+          </div>
+        </div>
+
+         </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="col-md-4 p-5" id="Box-animation-division" style="padding-left: 30px ;">
+      <div class="wrapper">
+        <div class="container">
+          <div class="image-cube">
+            <div class="front">
+              <img [src]="blog.ImageUrl1"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="right">
+              <img [src]="blog.ImageUrl2"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="back">
+              <img [src]="blog.ImageUrl3"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="left">
+              <img [src]="blog.ImageUrl4"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 100px; text-align: center; visibility: hidden;">
+      <div class="card"
+      style="margin-top: 10px; display: flex; align-items: center; justify-content: space-around;">
+        <span>Add Paragraph</span>
+        <button mat-raised-button  type="button"
+        class="btn btn-success">Paragraphs</button>
+      </div>
+
+      <div class="card"
+      style="margin-top: 10px; display: flex; align-items: center; justify-content: space-around;">
+        <span>Add Bulletpoints</span>
+        <button mat-raised-button  type="button"
+        class="btn btn-success"> Click Here</button>
+      </div>
+
+      <div class="card"
+      style="margin-top: 10px; display: flex; align-items: center; justify-content: space-around;">
+        <span>Add More Links</span>
+        <button mat-raised-button  type="button"
+        class="btn btn-success"> Click Here</button>
+      </div>
+
+      <div class="card"
+      style="margin-top: 10px; display: flex; align-items: center; justify-content: space-around;">
+        <span>Add More Images</span>
+        <button mat-raised-button  type="button"
+        class="btn btn-success"> Click Here</button>
+      </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4 p-5" id="Box-animation-division"
+     style="padding-left: 30px; float: right;" *ngIf="ExtraThings!=false">
+      <div class="wrapper">
+        <div class="container">
+          <div class="image-cube">
+            <div class="front">
+              <img [src]="blog.ImageUrl"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="right">
+              <img [src]="blog.ImageUrl5"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="back">
+              <img [src]="blog.ImageUrl6"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+            <div class="left">
+              <img [src]="blog.ImageUrl7"
+              onerror="this.onerror=null; this.src='../../assets/images/No_image_available.svg.png';">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button style="width: 150px; margin-top: 10px; margin-bottom: 10px; margin-left: 20px;"
+  *ngIf="author.uploaded=='true'" (click)="saveData()" class="btn btn-success">Submit</button>
+</div>
+
+<div *ngIf="submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newData()">Add</button>
+</div>
+

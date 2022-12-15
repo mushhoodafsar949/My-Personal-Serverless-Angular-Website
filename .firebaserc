@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mushhoodafsar-a444a": {
+      "hosting": {
+        "mushhoodafsar": [
+          "mushhoodafsar-a444a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mushhoodafsar-a444a"
+  }
+}

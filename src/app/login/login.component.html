@@ -1,0 +1,76 @@
+<div id="LoginMainDiv">
+  <mat-card id="LoginMainDiv-content">
+    <mat-card-header>
+      <mat-card-title>{{ getStateText() }}</mat-card-title>
+    </mat-card-header>
+
+    <div *ngIf="isLoginState()">
+      <div class="formGroup">
+        <input
+          type="text"
+          class="formControl"
+          placeholder="Username"
+          #userName
+          required
+        />
+      </div>
+      <div class="formGroup">
+        <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #userPassword
+          required
+        />
+      </div>
+      <div class="formGroup">
+        <input
+          type="button"
+          class="btn btnPrimary"
+          style="color: white"
+          value="Log in"
+          (click)="SignIn(userName.value, userPassword.value)"
+        />
+      </div>
+    </div>
+
+    <div *ngIf="isForgotPasswordState()">
+          <p class="text-center">
+            Please enter your email address to request a password reset.
+          </p>
+          <div class="formGroup">
+            <input
+              type="email"
+              class="formControl"
+              placeholder="Email Address"
+              #passwordResetEmail
+              required
+            />
+          </div>
+
+          <div class="formGroup">
+            <input
+              type="submit"
+              class="btn btnPrimary"
+              style="color: white;"
+              value="Reset Password"
+              (click)="ForgotPassword(passwordResetEmail.value)"
+            />
+          </div>
+    </div>
+
+  </mat-card>
+
+  <mat-card-actions align="start">
+    <button
+      mat-flat-button
+      class="btn btnPrimary"
+      (click)="onForgotPasswordClick()"
+    >
+      Forgot Password
+    </button>
+    <button mat-flat-button class="btn btnPrimary" (click)="onLoginClick()">
+      Login
+    </button></mat-card-actions
+  >
+</div>
